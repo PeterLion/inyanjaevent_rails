@@ -1,0 +1,14 @@
+<p>
+  <strong>Welcome:</strong>
+  <%= @user.name %>
+</p>
+ 
+<p>
+  <strong>Reach me at:</strong>
+  <%= @user.email %>
+</p>
+<%= link_to 'New event', new_user_event_path(@user) %>
+<h2>Events: </h2>
+ <%= link_to 'Your Events', user_events_path(@user) %>
+ <br/>
+<%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Back', users_path %>
