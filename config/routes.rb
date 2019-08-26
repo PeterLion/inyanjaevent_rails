@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'frontend/index'
+  resources :events
 
-  resources :users do
-   resources :events
-  end
   #Setting the application root route
   root 'frontend#index'
 end

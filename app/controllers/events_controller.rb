@@ -1,21 +1,25 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
     def index
-      @user = User.find(params[:user_id])
-        @events = @user.events.all
+     
+        @events = current_user.events.all
       end
     def show
         @event = Event.find(params[:id])
       end
     def new
-      @user = User.find(params[:user_id])
+      @event = current_user.events.build
     end
     def edit
-      @user = User.find(params[:user_id])
+      @event = Event.find(params[:id])
       end
-      def create
-        @user = User.find(params[:user_id])
-        @event = @user.events.create(event_params)
-        redirect_to user_path(@user)
+    def create
+      @event = current_user.events.build(event_params)
+      if @event.save
+        redirect_to @event
+      else
+        render 'new'
+      end
       end
     def update
         @event = Event.find(params[:id])

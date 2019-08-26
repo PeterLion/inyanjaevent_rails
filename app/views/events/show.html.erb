@@ -1,15 +1,24 @@
-<p>
-  <strong>Event:</strong>
-  <%= @event.name %>
-</p>
- 
-<p>
-  <strong>Venue:</strong>
-  <%= @event.venue %>
-</p>
-<p>
-  <strong>About the event:</strong>
-  <%= @event.description %>
-</p>
+<div class="container">
+<table class="table table-stripped">
+<tr>
+<thead>
+<th>Title</th>
+<th>Venue</th>
+<th>Description</th>
+<th>Actions</th>
+</thead>
+</tr>
+<tbody>
+<tr>
+<tr></tr>
+<td><%= @event.name %></td>
+<td><%= @event.venue %></td>
+<td><%= @event.description %></td>
+<td><%= link_to 'Edit', edit_event_path(@event) %></td>
+</tr>
 
-<%= link_to 'Edit', edit_event_path(@event) %> | <%= link_to 'Back', events_path %>
+</tbody>
+</table>
+
+ <%= link_to 'Event', events_path %>
+</div>
