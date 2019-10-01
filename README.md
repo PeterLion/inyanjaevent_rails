@@ -45,9 +45,7 @@ The development enevironment runs on SQLite database for data persistence
 
 To create database tables
 
-to run the application, run this command:
+* To run the application, run this command:
 
-### rails server
-
-to start the application
+### `rails server` to start the application
 
