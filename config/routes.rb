@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   #Setting the application root route
   root 'frontend#index'
+
+  get('/status' => 'status#index')
 end

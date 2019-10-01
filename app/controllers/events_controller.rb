@@ -1,8 +1,11 @@
+Import = Dry::AutoInject(Service_Container)
+
 class EventsController < ApplicationController
+  include Import["event_service"]
+
   before_action :authenticate_user!, except: [:index, :show]
     def index
-     
-        @events = current_user.events.all
+        event_service.say_hello()
       end
     def show
         @event = Event.find(params[:id])
