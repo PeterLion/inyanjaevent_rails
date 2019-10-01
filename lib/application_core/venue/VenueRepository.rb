@@ -2,7 +2,7 @@ Import = Dry::AutoInject(Entity_Container)
 
 class VenueRepository
     include Import['venue']
-    def hello()
+    def get_venue()
         venue.get_venue()
      end
 

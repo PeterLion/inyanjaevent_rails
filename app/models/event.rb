@@ -3,7 +3,7 @@ class Event < ApplicationRecord
     validates :name, presence: true,
                     length: { minimum: 8 }
 
-    def get_category()
+    def get_event()
         "This is an event entity"
     end
 end

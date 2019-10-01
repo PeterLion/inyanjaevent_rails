@@ -2,7 +2,7 @@ Import = Dry::AutoInject(Entity_Container)
 
 class EventRepository
     include Import['event']
-    def hello()
+    def get_event()
         event.get_event()
      end
 

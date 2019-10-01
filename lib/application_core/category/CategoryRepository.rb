@@ -1,7 +1,7 @@
 Import = Dry::AutoInject(Entity_Container)
 class CategoryRepository
     include Import['category']
-    def hello()
+    def get_category()
         category.get_category()
      end
 

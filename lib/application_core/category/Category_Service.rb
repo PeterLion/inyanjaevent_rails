@@ -2,7 +2,7 @@ Import = Dry::AutoInject(Repository_Container)
 
 class Category_Service
     include Import['category_repository']
-    def say_hello()
-        category_repository.hello()
+    def get_category()
+        category_repository.get_category()
     end
 end
