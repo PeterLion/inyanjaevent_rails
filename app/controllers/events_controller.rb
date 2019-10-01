@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
     def index
-        event_service.say_hello()
+        event_service.get_event()
       end
     def show
         @event = Event.find(params[:id])

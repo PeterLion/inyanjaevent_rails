@@ -6,7 +6,7 @@ class VenuesController < ApplicationController
     def index
         render(json:{'status'=>'ok'})
     end
-    def say_me()
-        venue_service.say_hello()
+    def get_venue()
+        venue_service.get_venue()
     end
 end
