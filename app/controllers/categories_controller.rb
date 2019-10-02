@@ -4,6 +4,6 @@ class CategoriesController < ApplicationController
     include Import['category_service']
 
     def index
-        category_service.get_category()
+        render(json: {message:category_service.get_category()})
     end
 end

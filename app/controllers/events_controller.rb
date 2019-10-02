@@ -5,16 +5,16 @@ class EventsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
     def index
-        event_service.get_event()
+        @events = event_service.get_events()
       end
     def show
-        @event = Event.find(params[:id])
+        @event = event_service.find(params[:id])
       end
     def new
       @event = current_user.events.build
     end
     def edit
-      @event = Event.find(params[:id])
+      @event = event_service.find(params[:id])
       end
     def create
       @event = current_user.events.build(event_params)
@@ -25,7 +25,7 @@ class EventsController < ApplicationController
       end
       end
     def update
-        @event = Event.find(params[:id])
+        @event = event_service.find(params[:id])
        
         if @event.update(event_params)
           redirect_to @event

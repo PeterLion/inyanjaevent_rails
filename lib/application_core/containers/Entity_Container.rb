@@ -6,15 +6,15 @@ require_relative "../../../app/models/category.rb"
 class Entity_Container extend Dry::Container::Mixin
     
     register "event" do
-       Event.new
+       ::Event.new
     end
 
     register "venue" do
-        Venue.new
+        ::Venue.new
     end
 
     register "category" do
-        Category.new
+        ::Category.new
     end
 
 end
